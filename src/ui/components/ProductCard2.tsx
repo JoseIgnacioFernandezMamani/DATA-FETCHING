@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { URL } from "../../async/services/getData";
 
 interface Product {
   title: string;
@@ -12,8 +13,6 @@ export const ProductCard2: React.FC = () => {
   const [product, setProduct] = useState<Product>({});
 
   useEffect(() => {
-    const randomNumberId = Math.floor(Math.random() * 100);
-    const URL = `https://dummyjson.com/products/${randomNumberId}`;
     fetch(URL)
       .then((res) => res.json())
       .then((data: Product) => {

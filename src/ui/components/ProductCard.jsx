@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { URL } from "../../async/services/getData";
 
 export const ProductCard = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const randomNumberId = Math.floor(Math.random() * 100);
-    const URL = `https://dummyjson.com/products/${randomNumberId}`;
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
