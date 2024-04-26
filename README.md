@@ -1,12 +1,23 @@
-# React + Vite
+# Cambios al trabajar con TypeScript (`.tsx`) en lugar de JavaScript (`.jsx`)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Es necesario definir explícitamente los tipos de datos para componentes, props, estados y otros datos utilizados en la aplicación.
 
-Currently, two official plugins are available:
+- **Manejo de errores de tipo**: TypeScript te ayuda a detectar errores de tipo durante el desarrollo, evitando problemas en tiempo de ejecución.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Uso de librerías con tipos definidos**: Es recomendable utilizar librerías con definiciones de tipos para una mejor integración con TypeScript.
 
-## Install & Run
-- yarn 
-- yarn dev
+## cambios especificos
+
+``` javascript
+interface Product {
+  title: string;
+  description: string;
+  price: number;
+  brand: string;
+}
+
+export const ProductCard2: React.FC = () => {
+  const [product, setProduct] = useState<Product>({});
+/*resto de codigo*/
+}
+```
